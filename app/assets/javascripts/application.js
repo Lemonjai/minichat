@@ -15,4 +15,5 @@
 //= require bootstrap-sprockets
 //= require jquery.turbolinks
 //= require turbolinks
+//= require polling
 //= require_tree .

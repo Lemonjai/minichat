@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  resources :comments, only: [:new, :create]
+  resources :comments, only: [:new, :create, :index]
   root to: 'comments#new'
 
   get '/auth/:provider/callback', to: 'sessions#create'
