@@ -1,4 +1,5 @@
 require File.expand_path('../boot', __FILE__)
+require File.expand_path('../csrf_protection', __FILE__)
 
 require "rails"
 # Pick the frameworks you want:
@@ -33,6 +34,6 @@ module MiniChat
     config.active_record.raise_in_transactional_callbacks = true
 
     config.middleware.delete Rack::Lock
-    config.middleware.use FayeRails::Middleware, mount: '/faye', :timeout => 25
+    config.middleware.use FayeRails::Middleware, extensions: [CsrfProtection.new], mount: '/faye', :timeout => 25
   end
 end
