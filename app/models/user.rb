@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
 			user.avatar_url = info.image
 			user.profile_url = info.urls.send(provider.capitalize.to_sym)
 			user.email = info.email
-			user.save!(validate: false)
+			user.save!
 			user
 		end
 	end
